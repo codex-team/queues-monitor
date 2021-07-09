@@ -94,7 +94,7 @@ func main() {
 func collectData(ctx context.Context, metrics *[]Metric) error {
 	errs := make(chan error)
 	wg := sync.WaitGroup{}
-	for i, _ := range *metrics {
+	for i := range *metrics {
 		wg.Add(1)
 		go func(mt *Metric, ctx context.Context) {
 			err := mt.getMetricValues(&wg, ctx)

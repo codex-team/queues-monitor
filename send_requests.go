@@ -15,6 +15,7 @@ import (
 // sendRequest sends HTTP request to provided address.
 func sendRequest(ctx context.Context, method, addr string, reqBody string) ([]byte, error) {
 	client := http.Client{}
+	//nolint:staticcheck
 	req := &http.Request{}
 	var err error
 
