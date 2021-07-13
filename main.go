@@ -49,7 +49,7 @@ func init() {
 	flag.StringVar(&p8sAddr, "p8s", "http://localhost:9090", "Prometheus address")
 	flag.StringVar(&notifyAddr, "notify", "", "Notifications endpoint")
 	flag.StringVar(&grafanaLink, "grafana", "", "Link to Grafana dashboard")
-	flag.StringVar(&server, "server", "prod", "Server name")
+	flag.StringVar(&server, "server", "Hawk (prod)", "Server name")
 }
 
 func main() {
@@ -71,7 +71,7 @@ func main() {
 		{
 			query:       "rabbitmq_queue_messages",
 			values:      []metricValue{},
-			description: "Queues on Hawk (" + server + ") 🌀",
+			description: "Queues on " + server + " 🌀",
 		},
 	}
 
